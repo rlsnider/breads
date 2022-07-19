@@ -61,7 +61,7 @@ breads.get('/:arrayIndex', (req, res) => {
       index: req.params.arrayIndex,
     })
   } else {
-    res.render('404')
+    res.render('error404')
   }
 })
 
