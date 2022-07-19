@@ -6,6 +6,11 @@ const PORT = process.env.PORT
 const app = express()
 console.log(PORT)
 
+// MIDDLEWARE
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
 //ROUTES
 //Landing Page
 app.get('/', (req, res)=>{
