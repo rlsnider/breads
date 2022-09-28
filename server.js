@@ -1,5 +1,4 @@
 const express = require('express')
-const { use } = require('./controllers/breads_controller.js')
 
 require('dotenv').config()
 const PORT = process.env.PORT
@@ -10,6 +9,7 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
 
 // ROUTES
 app.get('/', (req, res) => {
