@@ -1,10 +1,10 @@
 const React = require('react')
 const Default = require('./layouts/Default')
 
-function Show ({bread, title, index}) {
+function Show ({bread, index}) {
     console.log (bread.name)
     return (
-        <Default title={title}>
+        <Default>
             <h3>{bread.name}</h3>
             <p> 
                 and it 
@@ -17,6 +17,8 @@ function Show ({bread, title, index}) {
             </p>
             <img src={bread.image} alt={bread.name} />
             <li><a href="/breads">Go home</a></li>
+            <a href={`/breads/${index}/edit`}><button>Edit</button></a>
+                
             <form action={`/breads/${index}?_method=DELETE`} method="POST">
                 <input type="submit" value="DELETE" />
             </form>
